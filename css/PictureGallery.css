@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Gallery Section */
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#gallery figure {
+    margin: 0;
+}
+
+#gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+#gallery ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gallery ul li {
+    width: 350px;
+    flex: 1;
+}
+
+/* Thumbnail Styling */
+#gallery ul li img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Active Thumbnail Styling */
+#gallery ul li img:hover {
+    filter: brightness(1.2);
+}
+
+/* Featured Image Section */
+figure img.largeImage {
+    width: 80%;
+    max-width: 2000px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+figcaption {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal img.largeImage {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+    color: #f39c12;
+}
+
+.modal .arrow-prev,
+.modal .arrow-next {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+    transform: translateY(-50%);
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.modal .arrow-prev:hover,
+.modal .arrow-next:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal .arrow-prev {
+    left: 10px;
+}
+
+.modal .arrow-next {
+    right: 10px;
+}
+
+/* Modal Active Display */
+.modal.show {
+    display: flex;
+}
+
+/* Image Caption Styling in Modal */
+#caption {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Transition for Thumbnail Grayscale */
+#gallery ul li img.grayscale {
+    filter: grayscale(100%);
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Gallery | COMP1073 Client-Side JavaScript</title>
+	<link rel="stylesheet" href="css/PictureGallery.css">
+</head>
+<body>
+<h1>Image Gallery</h1>
+<section id="gallery">
+	<figure>
+		<img src="images/flowers-pink-large.jpg" alt="Flowers Large" class="largeImage" width="2000" height="1500">
+		<figcaption>Flowers Pink Large</figcaption>
+	</figure>
+	<ul>
+		<li><img src="images/flowers-pink-small.jpg" alt="Pink Flowers" width="350" height="200" onclick="openModal('images/flowers-pink-large.jpg', 'Flowers Pink Large')"></li>
+		<li><img src="images/flowers-purple-small.jpg" alt="Purple Flowers" width="350" height="200" onclick="openModal('images/flowers-purple-large.jpg', 'Flowers Purple Large')"></li>
+		<li><img src="images/flowers-red-small.jpg" alt="Red Flowers" width="350" height="200" onclick="openModal('images/flowers-red-large.jpg', 'Flowers Red Large')"></li>
+		<li><img src="images/flowers-white-small.jpg" alt="White Flowers" width="350" height="200" onclick="openModal('images/flowers-white-large.jpg', 'Flowers White Large')"></li>
+		<li><img src="images/flowers-yellow-small.jpg" alt="Yellow Flowers" width="350" height="200" onclick="openModal('images/flowers-yellow-large.jpg', 'Flowers Yellow Large')"></li>
+	</ul>
+</section>
+
+<!-- Modal Structure for Full-Sized Image Display -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+	<span class="close" onclick="closeModal()">&times;</span>
+	<img id="modalImg" class="largeImage" src="images/flowers-pink-large.jpg" alt="Featured Image">
+	<figcaption id="caption">Flowers Pink Large</figcaption>
+	<div class="arrow-prev" onclick="event.stopPropagation(); navigate(-1)">&#10094;</div>
+	<div class="arrow-next" onclick="event.stopPropagation(); navigate(1)">&#10095;</div>
+</div>
+
+<script src="js/PictureGallery.js"></script>
+	<!-- PHOTO CREDITS
+	Sunflowers in the hamlet Dernekamp, Kirchspiel, Dülmen, North Rhine-Westphalia, Germany
+	By Dietmar Rabich - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61514522
+
+	Poppies in cornfield, Dülmen, North Rhine-Westphalia, Germany
+	By Dietmar Rabich - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=40957238
+
+	Daffodils in Sentmaring park, Münster, North Rhine-Westfalia, Germany
+	By Dietmar Rabich - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=48211466
+
+	Sentmaring Park, Münster, North Rhine-Westphalia, Germany
+	By Dietmar Rabich - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=48576226
+
+	Market in Münster, North Rhine-Westphalia, Germany
+	By Dietmar Rabich - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=62071586
+	-->
+</body>
+</html>
